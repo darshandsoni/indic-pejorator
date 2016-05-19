@@ -53,9 +53,11 @@ function pejoration(){
     pejorationMild();
   }
   else if (document.getElementById("option-two").checked) {
+    dictionary();
     pejorationMedium();
   }
   else {
+    dictionary();
     pejorationFlamin();
   }
 }
@@ -80,6 +82,7 @@ function pejorationMild(){
 
 function pejorationMedium(){
   document.getElementById("outputfield").innerHTML = "Not yet available";
+  //document.getElementById("outputfield").innerHTML = pronoun + " " + possesivePronoun + "\'s" + " " <====== NEED TO ADD MEDIUM GRAMMAR HERE
 }
 
 function pejorationFlamin(){
