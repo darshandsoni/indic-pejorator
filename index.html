@@ -24,11 +24,11 @@
         Mild
       </label>
       <label for="option-two" class="pure-radio grey">
-        <input id="option-two" type="radio" name="optionsRadios" value="option2" disabled>
+        <input id="option-two" type="radio" name="optionsRadios" value="option2">
         Medium (Coming soon)
       </label>
       <label for="option-three" class="pure-radio grey">
-        <input id="option-three" type="radio" name="optionsRadios" value="option3" disabled>
+        <input id="option-three" type="radio" name="optionsRadios" value="option3">
         Flamin' (Coming soon)
       </label>
       </fieldset>
@@ -44,19 +44,46 @@
 
 
 <script>
+var pronounList,possesivePronounList,primaryAdjectiveList,objectNounList
+var pronoun,possesivePronoun,primaryAdjective,primaryAdjective2,objectNoun
+
 function pejoration(){
-  var pronounList = ["Your"]
-  var possesivePronounList = ["mother","father","daughter","son","brother","sister","grandmother","grandfather","great grandmother","great grandfather","wife","mother-in-law","father-in-law","daughter-in-law","son-in-law","sister-in-law","brother-in-law","niece","nephew","boss","best man","bridesmaid","granddaughter","grandson"]
-  var primaryAdjectiveList = ["abysmal","adverse","alarming","angry","annoying","anxious","appalling","atrocious","awful","bad","banal","barbed","belligerent","boring","broken","callous","clumsy","coarse","cold","cold-hearted","collapsible","confused","contradictory","contrary","corrosive","corrupt","crazy","creepy","criminal","cruel","cut","dead","decaying","damage-prone","damaging","dastardly","deplorable","depressed","deprived","deformed","despicable","detrimental","dirty","disease-ridden","disgusting","disheveled","dishonest","dishonorable","dismal","distressed","dreadful","dreary","enraged","eroding","evil","failing","faulty","feeble","filthy","foul","frightful","gawky","ghastly","grave","greedy","grim","grimacing","gross","grotesque","gruesome","guilty","haggard","hard","hard-hearted","harmful","hated","hideous","horrendous","horrible","hostile","hurting","hurtful","icky","ignorant","ill","immature","imperfect","impossible","inane","inelegant","infernal","injurious","insane","insidious","insipid","jealous","junky","loose","lousy","lumpy","malicious","mean","menacing","messy","mishappened","missing","misunderstood","moaned","moldy","monstrous","naive","nasty","naughty","negative","nondescript","nonsensical","noxious","objectionable","odious","offensive","old","oppressive","pained","perturbed","pessimistic","petty","plain","poisonous","poor","prejudiced","questionable","quirky","rejected","reneged","repellant","reptilian","repulsive","repugnant","revolting","rocky","rotten","rude","ruthless","sad","savage","scary","screaming","severe","shoddy","shocking","sick","sickening","sinister","slimy","smelly","sobbing","sorry","spiteful","sticky","stinky","stormy","stressful","stuck","stupid","substandard","suspicious","tense","terrible","terrifying","threatening","ugly","undermined","unfair","unfavorable","unhappy","unhealthy","unjust","unlucky","unpleasant","upset","unsatisfactory","unsightly","untoward","unwanted","unwelcome","unwholesome","unwieldy","unwise","upset","vicious","vile","villainous","vindictive","wary","weary","wicked","woeful","worthless","wounded","yelling","yucky"]
-  var objectNounList = ["arse","ass","cunt","pussy","clitoris","vagina","anus","cheeks","dildo","penis","hybrid child","nipple","cum","sexually transmitted infection","lips","body","peach","pudding","brainpower","product","incest","juice","aptitude","appearance","demeanor","lack of honour","rhetoric","orifices"]
+  if(document.getElementById("option-one").checked){
+    dictionary();
+    pejorationMild();
+  }
+  else if (document.getElementById("option-two").checked) {
+    pejorationMedium();
+  }
+  else {
+    pejorationFlamin();
+  }
+}
 
-  var pronoun = pronounList[0]
-  var possesivePronoun = possesivePronounList[Math.floor(Math.random() * possesivePronounList.length)]
-  var primaryAdjective = primaryAdjectiveList[Math.floor(Math.random() * primaryAdjectiveList.length)]
-  var primaryAdjective2 = primaryAdjectiveList[Math.floor(Math.random() * primaryAdjectiveList.length)]
-  var objectNoun = objectNounList[Math.floor(Math.random() * objectNounList.length)]
+function dictionary(){
+  pronounList = ["Your"]
+  possesivePronounList = ["mother","father","daughter","son","brother","sister","grandmother","grandfather","great grandmother","great grandfather","wife","mother-in-law","father-in-law","daughter-in-law","son-in-law","sister-in-law","brother-in-law","niece","nephew","boss","best man","bridesmaid","granddaughter","grandson"]
+  primaryAdjectiveList = ["abysmal","adverse","alarming","angry","annoying","anxious","appalling","atrocious","awful","bad","banal","barbed","belligerent","boring","broken","callous","clumsy","coarse","cold","cold-hearted","collapsible","confused","contradictory","contrary","corrosive","corrupt","crazy","creepy","criminal","cruel","cut","dead","decaying","damage-prone","damaging","dastardly","deplorable","depressed","deprived","deformed","despicable","detrimental","dirty","disease-ridden","disgusting","disheveled","dishonest","dishonorable","dismal","distressed","dreadful","dreary","enraged","eroding","evil","failing","faulty","feeble","filthy","foul","frightful","gawky","ghastly","grave","greedy","grim","grimacing","gross","grotesque","gruesome","guilty","haggard","hard","hard-hearted","harmful","hated","hideous","horrendous","horrible","hostile","hurting","hurtful","icky","ignorant","ill","immature","imperfect","impossible","inane","inelegant","infernal","injurious","insane","insidious","insipid","jealous","junky","loose","lousy","lumpy","malicious","mean","menacing","messy","mishappened","missing","misunderstood","moaned","moldy","monstrous","naive","nasty","naughty","negative","nondescript","nonsensical","noxious","objectionable","odious","offensive","old","oppressive","pained","perturbed","pessimistic","petty","plain","poisonous","poor","prejudiced","questionable","quirky","rejected","reneged","repellant","reptilian","repulsive","repugnant","revolting","rocky","rotten","rude","ruthless","sad","savage","scary","screaming","severe","shoddy","shocking","sick","sickening","sinister","slimy","smelly","sobbing","sorry","spiteful","sticky","stinky","stormy","stressful","stuck","stupid","substandard","suspicious","tense","terrible","terrifying","threatening","ugly","undermined","unfair","unfavorable","unhappy","unhealthy","unjust","unlucky","unpleasant","upset","unsatisfactory","unsightly","untoward","unwanted","unwelcome","unwholesome","unwieldy","unwise","upset","vicious","vile","villainous","vindictive","wary","weary","wicked","woeful","worthless","wounded","yelling","yucky"]
+  objectNounList = ["arse","ass","cunt","pussy","clitoris","vagina","anus","cheeks","dildo","penis","hybrid child","nipple","cum","sexually transmitted infection","lips","body","peach","pudding","brainpower","product","incest","juice","aptitude","appearance","demeanor","lack of honour","rhetoric","orifices"]
 
+  pronoun = pronounList[0]
+  possesivePronoun = possesivePronounList[Math.floor(Math.random() * possesivePronounList.length)]
+  primaryAdjective = primaryAdjectiveList[Math.floor(Math.random() * primaryAdjectiveList.length)]
+  primaryAdjective2 = primaryAdjectiveList[Math.floor(Math.random() * primaryAdjectiveList.length)]
+  objectNoun = objectNounList[Math.floor(Math.random() * objectNounList.length)]
+
+}
+
+function pejorationMild(){
   document.getElementById("outputfield").innerHTML = pronoun + " " + possesivePronoun + "\'s" + " " + primaryAdjective + ", " + primaryAdjective2 + " " + objectNoun;
+}
+
+function pejorationMedium(){
+  document.getElementById("outputfield").innerHTML = "Not yet available";
+}
+
+function pejorationFlamin(){
+  document.getElementById("outputfield").innerHTML = "Not yet available";
 }
 </script>
 
