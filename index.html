@@ -45,7 +45,7 @@
 
 <script>
 var pronounList,possesivePronounList,primaryAdjectiveList,objectNounList,livestockList,localPrepositionList
-var pronoun,possesivePronoun,primaryAdjective,primaryAdjective2,objectNoun,livestock,localPreposition
+var pronoun,possesivePronoun,primaryAdjective,primaryAdjective2,objectNoun,livestock,localPreposition,indefiniteArticle
 
 function pejoration(){
   if(document.getElementById("option-one").checked){
@@ -67,8 +67,8 @@ function dictionary(){
   primaryAdjectiveList = ["abysmal","adverse","alarming","angry","annoying","anxious","appalling","atrocious","awful","bad","banal","barbed","belligerent","boring","broken","callous","clumsy","coarse","cold","cold-hearted","collapsible","confused","contradictory","contrary","corrosive","corrupt","crazy","creepy","criminal","cruel","cut","dead","decaying","damage-prone","damaging","dastardly","deplorable","depressed","deprived","deformed","despicable","detrimental","dirty","disease-ridden","disgusting","disheveled","dishonest","dishonorable","dismal","distressed","dreadful","dreary","enraged","eroding","evil","failing","faulty","feeble","filthy","foul","frightful","gawky","ghastly","grave","greedy","grim","grimacing","gross","grotesque","gruesome","guilty","haggard","hard","hard-hearted","harmful","hated","hideous","horrendous","horrible","hostile","hurting","hurtful","icky","ignorant","ill","immature","imperfect","impossible","inane","inelegant","infernal","injurious","insane","insidious","insipid","jealous","junky","loose","lousy","lumpy","malicious","mean","menacing","messy","mishappened","missing","misunderstood","moaned","moldy","monstrous","naive","nasty","naughty","negative","nondescript","nonsensical","noxious","objectionable","odious","offensive","old","oppressive","pained","perturbed","pessimistic","petty","plain","poisonous","poor","prejudiced","questionable","quirky","rejected","reneged","repellant","reptilian","repulsive","repugnant","revolting","rocky","rotten","rude","ruthless","sad","savage","scary","screaming","severe","shoddy","shocking","sick","sickening","sinister","slimy","smelly","sobbing","sorry","spiteful","sticky","stinky","stormy","stressful","stuck","stupid","substandard","suspicious","tense","terrible","terrifying","threatening","ugly","undermined","unfair","unfavorable","unhappy","unhealthy","unjust","unlucky","unpleasant","upset","unsatisfactory","unsightly","untoward","unwanted","unwelcome","unwholesome","unwieldy","unwise","upset","vicious","vile","villainous","vindictive","wary","weary","wicked","woeful","worthless","wounded","yelling","yucky"]
   objectNounList = ["arse","ass","cunt","pussy","clitoris","vagina","anus","cheeks","dildo","penis","hybrid child","nipple","cum","sexually transmitted infection","lips","body","peach","pudding","brainpower","product","incest","juice","aptitude","appearance","demeanor","lack of honour","rhetoric","orifices"]
   livestockList = ["frog","salamander","spider","bee","bird of prey","budgerigar","canary","chicken","cockatiel","duck","fowl","goose","guineafowl","lovebird","ostrich","peafowl","pheasants","pigeon","ringneck dove","swan","turkey","society finch","zebra finch","koi","betta fish","carp","goldfish","guppy","tilapia","pearl oyster","ant","bees","fruit fly","honey bee","indian stick insect","leech","maggot","alpaca","ape","camel","caribou","cat","chinchilla","cow","dog","dolphin","donkey","elephant","ermine","ferret","fox","gerbil","goat","guinea pig","hamster","hedgehog","horse","llama","mink","monkey","mouse","mule","musk ox","otter","pig","pony","possum","rabbit","rat","reindeer","sheep","skunk","squirrel","water buffalo","wolf","yak","zebra","seal","sea lion","snake","iguana","alligator","crocodile","leopard gecko","python","turtle","water-turtle"]
-  verbList = ["copulated with a","engorged a","reproduced with a","spat in a","inseminated a",""]
-  localPrepositionList = ["on","over","under","in","below","across","about"]
+  verbList = ["copulated with","engorged","reproduced with","spat in","inseminated"]
+  localPrepositionList = ["on","over","under","in","below","across","about in"]
 
   pronoun = pronounList[0]
   possesivePronoun = possesivePronounList[Math.floor(Math.random() * possesivePronounList.length)]
@@ -80,6 +80,13 @@ function dictionary(){
   verb = verbList[Math.floor(Math.random() * verbList.length)]
   localPreposition = localPrepositionList[Math.floor(Math.random() * localPrepositionList.length)]
 
+  //if (livestock2.matches("^[aeiou].*")) {
+  //  indefiniteArticle = "an"
+  //}
+  //else {
+    indefiniteArticle = "a"
+  //}
+
 }
 
 function pejorationMild(){
@@ -87,7 +94,7 @@ function pejorationMild(){
 }
 
 function pejorationMedium(){
-  document.getElementById("outputfield").innerHTML = pronoun + " " + possesivePronoun + "\s" + " " + primaryAdjective + " " + livestock + " " + verb + " " + livestock2 + " " + localPreposition + " " + pronoun + " " + possesivePronoun + "\'s" + " " +objectNoun;
+  document.getElementById("outputfield").innerHTML = pronoun + " " + possesivePronoun + "\'s" + " " + primaryAdjective + " " + livestock + " " + verb + " " + indefiniteArticle + " " + livestock2 + " " + localPreposition + " " + pronoun + " " + possesivePronoun + "\'s" + " " +objectNoun;
 }
 
 function pejorationFlamin(){
