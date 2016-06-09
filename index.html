@@ -23,9 +23,9 @@
         <input id="option-one" type="radio" name="optionsRadios" value="option1" checked>
         Mild
       </label>
-      <label for="option-two" class="pure-radio grey">
+      <label for="option-two" class="pure-radio">
         <input id="option-two" type="radio" name="optionsRadios" value="option2">
-        Medium (Coming soon)
+        Medium
       </label>
       <label for="option-three" class="pure-radio grey">
         <input id="option-three" type="radio" name="optionsRadios" value="option3" disabled>
@@ -62,15 +62,16 @@ function pejoration(){
 }
 
 function dictionary(){
-  pronounList = ["your"]
+  pronounList = ["your","Your"]
   possesivePronounList = ["mother","father","daughter","son","brother","sister","grandmother","grandfather","great grandmother","great grandfather","wife","mother-in-law","father-in-law","daughter-in-law","son-in-law","sister-in-law","brother-in-law","niece","nephew","boss","best man","bridesmaid","granddaughter","grandson"]
   primaryAdjectiveList = ["abysmal","adverse","alarming","angry","annoying","anxious","appalling","atrocious","awful","bad","banal","barbed","belligerent","boring","broken","callous","clumsy","coarse","cold","cold-hearted","collapsible","confused","contradictory","contrary","corrosive","corrupt","crazy","creepy","criminal","cruel","cut","dead","decaying","damage-prone","damaging","dastardly","deplorable","depressed","deprived","deformed","despicable","detrimental","dirty","disease-ridden","disgusting","disheveled","dishonest","dishonorable","dismal","distressed","dreadful","dreary","enraged","eroding","evil","failing","faulty","feeble","filthy","foul","frightful","gawky","ghastly","grave","greedy","grim","grimacing","gross","grotesque","gruesome","guilty","haggard","hard","hard-hearted","harmful","hated","hideous","horrendous","horrible","hostile","hurting","hurtful","icky","ignorant","ill","immature","imperfect","impossible","inane","inelegant","infernal","injurious","insane","insidious","insipid","jealous","junky","loose","lousy","lumpy","malicious","mean","menacing","messy","mishappened","missing","misunderstood","moaned","moldy","monstrous","naive","nasty","naughty","negative","nondescript","nonsensical","noxious","objectionable","odious","offensive","old","oppressive","pained","perturbed","pessimistic","petty","plain","poisonous","poor","prejudiced","questionable","quirky","rejected","reneged","repellant","reptilian","repulsive","repugnant","revolting","rocky","rotten","rude","ruthless","sad","savage","scary","screaming","severe","shoddy","shocking","sick","sickening","sinister","slimy","smelly","sobbing","sorry","spiteful","sticky","stinky","stormy","stressful","stuck","stupid","substandard","suspicious","tense","terrible","terrifying","threatening","ugly","undermined","unfair","unfavorable","unhappy","unhealthy","unjust","unlucky","unpleasant","upset","unsatisfactory","unsightly","untoward","unwanted","unwelcome","unwholesome","unwieldy","unwise","upset","vicious","vile","villainous","vindictive","wary","weary","wicked","woeful","worthless","wounded","yelling","yucky"]
-  objectNounList = ["arse","ass","cunt","pussy","clitoris","vagina","anus","cheeks","dildo","penis","hybrid child","nipple","cum","sexually transmitted infection","lips","body","peach","pudding","brainpower","product","incest","juice","aptitude","appearance","demeanor","lack of honour","rhetoric","orifices"]
+  objectNounList = ["arse","ass","cunt","pussy","clitoris","vagina","anus","cheeks","dildo","penis","hybrid child","nipple","cum","sexually transmitted infection","lips","body","peach","pudding","brainpower","product","incest","juice","appearance","demeanor","lack of honour","rhetoric","orifices"]
   livestockList = ["frog","salamander","spider","bee","bird of prey","budgerigar","canary","chicken","cockatiel","duck","fowl","goose","guineafowl","lovebird","ostrich","peafowl","pheasants","pigeon","ringneck dove","swan","turkey","society finch","zebra finch","koi","betta fish","carp","goldfish","guppy","tilapia","pearl oyster","ant","bee","fruit fly","honey bee","indian stick insect","leech","maggot","alpaca","ape","camel","caribou","cat","chinchilla","cow","dog","dolphin","donkey","elephant","ermine","ferret","fox","gerbil","goat","guinea pig","hamster","hedgehog","horse","llama","mink","monkey","mouse","mule","musk ox","otter","pig","pony","possum","rabbit","rat","reindeer","sheep","skunk","squirrel","water buffalo","wolf","yak","zebra","seal","sea lion","snake","iguana","alligator","crocodile","leopard gecko","python","turtle","water-turtle"]
   verbList = ["copulated with","engorged","reproduced with","spat in","inseminated"]
-  localPrepositionList = ["on","over","under","in","below","across","about in"]
+  localPrepositionList = ["on","over","under","in","below","across","within"]
 
   pronoun = pronounList[0]
+  capitalisedPronoun = pronounList[1]
   possesivePronoun = possesivePronounList[Math.floor(Math.random() * possesivePronounList.length)]
   primaryAdjective = primaryAdjectiveList[Math.floor(Math.random() * primaryAdjectiveList.length)]
   primaryAdjective2 = primaryAdjectiveList[Math.floor(Math.random() * primaryAdjectiveList.length)]
@@ -92,11 +93,11 @@ function dictionary(){
 }
 
 function pejorationMild(){
-  document.getElementById("outputfield").innerHTML = pronoun + " " + possesivePronoun + "\'s" + " " + primaryAdjective + ", " + primaryAdjective2 + " " + objectNoun;
+  document.getElementById("outputfield").innerHTML = capitalisedPronoun + " " + possesivePronoun + "\'s" + " " + primaryAdjective + ", " + primaryAdjective2 + " " + objectNoun;
 }
 
 function pejorationMedium(){
-  document.getElementById("outputfield").innerHTML = pronoun + " " + possesivePronoun + "\'s" + " " + primaryAdjective + " " + livestock + " " + verb + " " + indefiniteArticle + " " + livestock2 + " " + localPreposition + " " + pronoun + " " + primaryAdjective2 + " " +objectNoun;
+  document.getElementById("outputfield").innerHTML = capitalisedPronoun + " " + possesivePronoun + "\'s" + " " + primaryAdjective + " " + livestock + " " + verb + " " + indefiniteArticle + " " + livestock2 + " " + localPreposition + " " + pronoun + " " + primaryAdjective2 + " " +objectNoun;
 }
 
 function pejorationFlamin(){
